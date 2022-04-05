@@ -1,14 +1,18 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Routes, Route } from "react-router-dom"
 import { BrowserRouter as Router } from "react-router-dom"
 import { ContextProvider } from "./Context"
 import "./styles.css"
+import Context from "./Context"
+
 
 import Header from "./components/Header"
 import Cart from "./pages/Cart"
 import Photos from "./pages/Photos"
 
 function App() {
+
+
     return (
         <Router>
             <ContextProvider>
@@ -16,6 +20,7 @@ function App() {
 
                 <div>
                     <Header />
+
                     <Routes>
                         <Route exact path="/" element={<Photos />} />
 

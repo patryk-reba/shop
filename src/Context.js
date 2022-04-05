@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react"
+import Popup from "./components/Popup"
 
 const Context = React.createContext()
 
 function ContextProvider({ children }) {
     const [allPhotos, setAllPhotos] = useState([])
     const [cartItems, setCartItems] = useState([])
+    const [clickedImg, setClickedImg] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    }
+
 
     const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
     useEffect(() => {
@@ -14,6 +22,7 @@ function ContextProvider({ children }) {
     }, [])
 
     function toggleFavorite(id) {
+        toggleClickedImg()
         const updatedArr = allPhotos.map(photo => {
             if (photo.id === id) {
                 return { ...photo, isFavorite: !photo.isFavorite }
@@ -36,6 +45,13 @@ function ContextProvider({ children }) {
         setCartItems([])
     }
 
+
+    function toggleClickedImg() {
+        setClickedImg((prevclickedImg) => !prevclickedImg)
+
+    }
+
+
     return (
         <Context.Provider value={{
             allPhotos,
@@ -43,7 +59,9 @@ function ContextProvider({ children }) {
             cartItems,
             addToCart,
             removeFromCart,
-            emptyCart
+            emptyCart,
+            togglePopup,
+            isOpen
         }}>
             {children}
         </Context.Provider>
