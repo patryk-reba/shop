@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import { CgDisplayGrid, CgDisplayFullwidth } from "react-icons/cg";
+import { AiFillHeart } from "react-icons/ai";
 import Context from "../Context"
 
 function Header() {
@@ -13,6 +14,10 @@ function Header() {
                 display ? <CgDisplayFullwidth size={30} onClick={changeDisplay} className="display-icon" /> :
                     <CgDisplayGrid size={30} className="display-icon" onClick={changeDisplay} />
             }
+            <Link to="/favorites">
+
+                <AiFillHeart size={30} className="display-icon" />
+            </Link>
             <Link to="/cart">
                 <i className={`${cartClassName} ri-fw ri-2x `}></i>
             </Link>

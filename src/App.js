@@ -9,6 +9,7 @@ import Context from "./Context"
 import Header from "./components/Header"
 import Cart from "./pages/Cart"
 import Photos from "./pages/Photos"
+import Favorites from "./pages/Favorites"
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
                     <Routes>
                         <Route exact path="/" element={<Photos />} />
 
-
+                        <Route path="/Favorites" element={<Favorites />} />
 
                         <Route path="/cart" element={<Cart />} />
 

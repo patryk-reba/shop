@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react"
 import Context from "../Context"
 import CartItem from "../components/CartItem"
-import Size from "../components/Size"
+
 
 function Cart() {
     const [buttonText, setButtonText] = useState("Place Order")
@@ -14,7 +14,7 @@ function Cart() {
 
             <CartItem key={item.id} item={item} />
             <div className="border"></div>
-            {/* <Size /> */}
+
         </div>
     ))
 

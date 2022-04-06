@@ -4,11 +4,11 @@ import Image from "../components/Image"
 import Context from "../Context"
 import { getClass } from "../utils"
 
-function Photos() {
+function Favorites() {
     const { allPhotos, display } = useContext(Context)
 
 
-    const imageElements = allPhotos.map((img, i) => (
+    const imageElements = allPhotos.map((img, i) => (img.isFavorite &&
         <Image key={img.id} img={img} className={getClass(i)} />
     ))
 
@@ -17,10 +17,11 @@ function Photos() {
 
         <main className={`${display ? "photos" : undefined} "light-mode"`}>
 
-            {/* { <main className="photos dark-background-popup">} */}
+
             {imageElements}
+
         </main >
     )
 }
 
-export default Photos
+export default Favorites
