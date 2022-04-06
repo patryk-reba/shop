@@ -24,6 +24,14 @@ main.photos {
     grid-auto-flow: dense;
 }
 
+@media(max-width: 767px) {
+    main.photos {
+        grid-auto-rows: 100px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    }
+}
+
 main.cart-page {
     padding: 10px;
 }
@@ -40,6 +48,9 @@ main.cart-page {
 .cart-page div.order-button {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+    border-radius: 50%;
+    border: none;
 }
 
 div.order-button>button {
@@ -220,4 +231,39 @@ a:active {
     text-align: center;
     border: 1px solid #999;
     font-size: 20px;
+}
+
+.size-form {
+    margin: 0 2rem 0 1rem;
+    display: flex;
+}
+
+select {
+    margin: 0 10px;
+    height: 20px;
+
+
+}
+
+.size-price {
+    margin-top: 0px;
+}
+
+.border {
+    border-bottom: 1px solid white;
+    margin-right: auto;
+    width: 95%;
+    margin-left: auto;
+}
+
+.display-icon {
+    cursor: pointer;
+    transform: scale(1);
+    transition-duration: 300ms;
+}
+
+.display-icon:hover {
+
+    transform: scale(1.2);
+    transition-duration: 300ms;
 }

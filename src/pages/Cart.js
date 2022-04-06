@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react"
 import Context from "../Context"
 import CartItem from "../components/CartItem"
+import Size from "../components/Size"
 
 function Cart() {
     const [buttonText, setButtonText] = useState("Place Order")
@@ -9,7 +10,12 @@ function Cart() {
     const totalCostDisplay = totalCost.toLocaleString("en-US", { style: "currency", currency: "USD" })
 
     const cartItemElements = cartItems.map(item => (
-        <CartItem key={item.id} item={item} />
+        <div className="cart-elements">
+
+            <CartItem key={item.id} item={item} />
+            <div className="border"></div>
+            {/* <Size /> */}
+        </div>
     ))
 
     function placeOrder() {
@@ -25,6 +31,7 @@ function Cart() {
         <main className="cart-page">
             <h1>Check out</h1>
             {cartItemElements}
+
             <p className="total-cost">Total: {totalCostDisplay}</p>
             {
                 cartItems.length > 0 ?

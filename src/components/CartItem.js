@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react"
 import PropTypes from "prop-types"
 import Context from "../Context"
 import useHover from "../hooks/useHover"
-
+import Size from "./Size"
 function CartItem({ item }) {
     const [hovered, ref] = useHover()
     const { removeFromCart } = useContext(Context)
@@ -19,7 +19,8 @@ function CartItem({ item }) {
             </i>
 
             <img src={item.url} width="130px" />
-            <p>$5.99</p>
+            <Size />
+            {/* <p>$5.99</p> */}
         </div>
     )
 }

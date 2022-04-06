@@ -8,6 +8,12 @@ function ContextProvider({ children }) {
     const [cartItems, setCartItems] = useState([])
     const [clickedImg, setClickedImg] = useState(false)
     const [isOpen, setIsOpen] = useState(false);
+    const [display, setDisplay] = useState(true)
+
+    function changeDisplay() {
+        setDisplay(prevDisplay => !prevDisplay)
+        console.log(display)
+    }
 
     const togglePopup = () => {
         setIsOpen(!isOpen);
@@ -61,7 +67,9 @@ function ContextProvider({ children }) {
             removeFromCart,
             emptyCart,
             togglePopup,
-            isOpen
+            isOpen,
+            changeDisplay,
+            display
         }}>
             {children}
         </Context.Provider>
