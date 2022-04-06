@@ -8,7 +8,7 @@ function Image({ className, img }) {
     const [hovered, ref] = useHover()
     const [clickedImg, setClickedImg] = useState(false)
     const [xxx, setXxx] = useState(false)
-    const { toggleFavorite, addToCart, cartItems, removeFromCart, togglePopup } = useContext(Context)
+    const { toggleFavorite, addToCart, cartItems, removeFromCart, togglePopup, display } = useContext(Context)
 
     function toggleClickedImg() {
         setClickedImg((prevclickedImg) => !prevclickedImg)
@@ -43,7 +43,7 @@ function Image({ className, img }) {
 
         <div
 
-            className={`${className} image-container ${clickedImg && "clicked-photo-popup"}`}
+            className={`${className} image-container ${display && clickedImg && "clicked-photo-popup"}`}
             ref={ref}
         >
 

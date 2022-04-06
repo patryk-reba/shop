@@ -87,7 +87,7 @@ img.image-grid {
 }
 
 img.image-grid:hover {
-    cursor: zoom-in;
+    cursor: pointer;
 }
 
 .image-container {
