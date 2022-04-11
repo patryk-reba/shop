@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Popup from "./components/Popup"
+
 
 const Context = React.createContext()
 
@@ -7,7 +7,7 @@ function ContextProvider({ children }) {
     const [allPhotos, setAllPhotos] = useState([])
     const [cartItems, setCartItems] = useState([])
     const [clickedImg, setClickedImg] = useState(false)
-    const [isOpen, setIsOpen] = useState(false);
+
     const [display, setDisplay] = useState(true)
 
     function changeDisplay() {
@@ -15,9 +15,7 @@ function ContextProvider({ children }) {
         console.log(display)
     }
 
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    }
+
 
 
     const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
@@ -57,6 +55,12 @@ function ContextProvider({ children }) {
 
     }
 
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    const [value, setValue] = React.useState(30);
+
 
     return (
         <Context.Provider value={{
@@ -66,10 +70,10 @@ function ContextProvider({ children }) {
             addToCart,
             removeFromCart,
             emptyCart,
-            togglePopup,
-            isOpen,
             changeDisplay,
-            display
+            display,
+            value,
+            handleChange
         }}>
             {children}
         </Context.Provider>

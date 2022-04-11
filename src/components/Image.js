@@ -7,8 +7,8 @@ import useHover from "../hooks/useHover"
 function Image({ className, img }) {
     const [hovered, ref] = useHover()
     const [clickedImg, setClickedImg] = useState(false)
-    const [xxx, setXxx] = useState(false)
-    const { toggleFavorite, addToCart, cartItems, removeFromCart, togglePopup, display } = useContext(Context)
+
+    const { toggleFavorite, addToCart, cartItems, removeFromCart, display, value } = useContext(Context)
 
     function toggleClickedImg() {
         setClickedImg((prevclickedImg) => !prevclickedImg)
@@ -41,17 +41,30 @@ function Image({ className, img }) {
         //     ref={ref}
         // >
 
+
         <div
 
-            className={`${className} image-container ${display && clickedImg && "clicked-photo-popup"}`}
+            className={`${className} image-container `}
             ref={ref}
         >
 
             <img src={img.url} className={`image-grid`} onClick={toggleClickedImg} />
-            {/* {clickedImg && <img src={img.url} className={` clicked-photo-popup`} />} */}
+
+            {display && clickedImg &&
+
+
+                <img src={img.url} className={`clicked-photo-popup image-container`} onClick={toggleClickedImg} />
+
+
+            }
             {heartIcon()}
             {cartIcon()}
+
         </div >
+
+
+
+
     )
 }
 

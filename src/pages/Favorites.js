@@ -5,7 +5,7 @@ import Context from "../Context"
 import { getClass } from "../utils"
 
 function Favorites() {
-    const { allPhotos, display } = useContext(Context)
+    const { allPhotos, display, value } = useContext(Context)
 
 
     const imageElements = allPhotos.map((img, i) => (img.isFavorite &&
@@ -15,7 +15,7 @@ function Favorites() {
     return (
 
 
-        <main className={`${display ? "photos" : undefined} "light-mode"`}>
+        <main className={`${display ? "photos" : undefined} "light-mode"`} style={{ width: `${value}%`, margin: "0 auto" }}>
 
 
             {imageElements}
