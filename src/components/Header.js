@@ -16,7 +16,7 @@ function Header() {
                     <CgDisplayGrid size={30} className="display-icon" onClick={changeDisplay} />
             }
             <Slider
-                defaultValue={99}
+                defaultValue={99} className="slider"
             />
             <Link to="/favorites">
                 <AiFillHeart size={30} className="display-icon" />

@@ -11,7 +11,7 @@ export default function ContinuousSlider() {
     const { value, setValue, handleChange } = useContext(Context)
 
     return (
-        <Box sx={{ width: 200 }}>
+        <Box sx={{ width: "30%", maxWidth: "200px" }}>
             <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
 
                 <Slider value={value} onChange={handleChange}
@@ -19,6 +19,7 @@ export default function ContinuousSlider() {
                     defaultValue={99}
                     aria-label="Small"
                     // valueLabelDisplay="auto"
+                    className="slider"
                     min={20}
                     max={99} />
 
