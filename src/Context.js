@@ -59,7 +59,7 @@ function ContextProvider({ children }) {
         setValue(newValue);
     };
 
-    const [value, setValue] = React.useState(99);
+    const [value, setValue] = React.useState(95);
 
 
     return (

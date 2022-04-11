@@ -16,12 +16,12 @@ export default function ContinuousSlider() {
 
                 <Slider value={value} onChange={handleChange}
                     size="medium"
-                    defaultValue={99}
+                    defaultValue={95}
                     aria-label="Small"
                     // valueLabelDisplay="auto"
                     className="slider"
                     min={20}
-                    max={99} />
+                    max={95} />
 
             </Stack>
             {/* <Slider disabled defaultValue={30} aria-label="Disabled slider" /> */}
