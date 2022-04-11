@@ -50,13 +50,13 @@ function Image({ className, img }) {
 
             <img src={img.url} className={`image-grid`} onClick={toggleClickedImg} />
 
-            {display && clickedImg &&
+            {/* {display && clickedImg &&
 
 
                 <img src={img.url} className={`clicked-photo-popup image-container`} onClick={toggleClickedImg} />
 
 
-            }
+            } */}
             {heartIcon()}
             {cartIcon()}
 
