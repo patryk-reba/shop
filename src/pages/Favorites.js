@@ -13,13 +13,8 @@ function Favorites() {
     ))
 
     return (
-
-
         <main className={`${display ? "photos" : undefined} "light-mode"`} style={{ width: `${value}%`, margin: "0 auto" }}>
-
-
             {imageElements}
-
         </main >
     )
 }

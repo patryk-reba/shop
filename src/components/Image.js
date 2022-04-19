@@ -34,37 +34,17 @@ function Image({ className, img }) {
         }
     }
 
-
     return (
-        // <div
-        //     className={`${className} image-container`} onClick={toggleClickedImg}
-        //     ref={ref}
-        // >
-
 
         <div
-
             className={`${className} image-container `}
             ref={ref}
         >
-
             <img src={img.url} className={`image-grid`} onClick={toggleClickedImg} />
-
-            {/* {display && clickedImg &&
-
-
-                <img src={img.url} className={`clicked-photo-popup image-container`} onClick={toggleClickedImg} />
-
-
-            } */}
             {heartIcon()}
             {cartIcon()}
 
         </div >
-
-
-
-
     )
 }
 
@@ -78,22 +58,3 @@ Image.propTypes = {
 }
 
 export default Image
-
-
-// className={`${className} image-container`} onClick={togglePopup}
-// ref={ref}
-// >
-// <div>
-
-//     {isOpen && <Popup
-//         content={
-//             <img src={img.url} className={`image-grid`} />
-//         }
-//         handleClose={togglePopup}
-//     />}
-// </div>
-// <img src={img.url} className={`image-grid`} />
-// {/* {clickedImg && <img src={img.url} className={` clicked-photo-popup`} />} */}
-// {heartIcon()}
-// {cartIcon()}
-// </div >

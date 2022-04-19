@@ -16,7 +16,6 @@ function Photos() {
 
 
         <main className={`${display ? "photos" : undefined} "light-mode"`} style={{ width: `${value}%`, margin: "0 auto" }}>
-
             {/* { <main className="photos dark-background-popup">} */}
             {imageElements}
         </main >

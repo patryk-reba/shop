@@ -15,9 +15,6 @@ function ContextProvider({ children }) {
         console.log(display)
     }
 
-
-
-
     const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
     useEffect(() => {
         fetch(url)
